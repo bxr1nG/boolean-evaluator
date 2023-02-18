@@ -27,7 +27,8 @@
         "prepack": "npm run build",
         "lint": "eslint --debug src/",
         "lint:write": "eslint --debug src/ --fix",
-        "prettier": "prettier --write src/**/*.ts"
+        "prettier": "prettier --write src/**/*.ts",
+        "prepare": "husky install"
     },
     "release": {
         "branches": [
@@ -55,6 +56,8 @@
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.1.2",
         "prettier": "^2.8.4",
         "shx": "^0.3.4",
         "typescript": "^4.9.5"
