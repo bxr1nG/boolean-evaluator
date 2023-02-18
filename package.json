@@ -1,12 +1,41 @@
 {
-  "name": "boolean-evaluator",
+  "name": "@bxr1ng-os/boolean-evaluator",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Package for transforming a string with logical operators into the result of an expression.",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bxr1nG/boolean-evaluator.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Danya Voshchuk <vochshukdaniil@gmail.com> (https://github.com/bxr1nG)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bxr1nG/boolean-evaluator/issues"
+  },
+  "homepage": "https://github.com/bxr1nG/boolean-evaluator#readme"
 }
