@@ -28,6 +28,10 @@
         "lint": "eslint --debug src/",
         "lint:write": "eslint --debug src/ --fix",
         "prettier": "prettier --write src/**/*.ts",
+        "cm": "cz",
+        "release-patch": "standard-version --release-as patch",
+        "release-minor": "standard-version --release-as minor",
+        "release-major": "standard-version --release-as major",
         "prepare": "husky install"
     },
     "release": {
@@ -50,8 +54,12 @@
     },
     "homepage": "https://github.com/bxr1nG/boolean-evaluator#readme",
     "devDependencies": {
+        "@commitlint/cli": "^17.4.4",
+        "@commitlint/config-conventional": "^17.4.4",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",
+        "commitizen": "^4.3.0",
+        "cz-conventional-changelog": "^3.3.0",
         "eslint": "^8.34.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-import": "^2.27.5",
@@ -60,6 +68,12 @@
         "lint-staged": "^13.1.2",
         "prettier": "^2.8.4",
         "shx": "^0.3.4",
+        "standard-version": "^9.5.0",
         "typescript": "^4.9.5"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
