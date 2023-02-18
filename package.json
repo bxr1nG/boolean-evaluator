@@ -1,52 +1,62 @@
 {
-  "name": "@bxr1ng-os/boolean-evaluator",
-  "version": "0.0.0",
-  "description": "Package for transforming a string with logical operators into the result of an expression.",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./lib/esm/types/index.d.ts",
-        "default": "./lib/esm/index.mjs"
-      },
-      "require": {
-        "types": "./lib/cjs/types/index.d.ts",
-        "default": "./lib/cjs/index.js"
-      }
+    "name": "@bxr1ng-os/boolean-evaluator",
+    "version": "0.0.0",
+    "description": "Package for transforming a string with logical operators into the result of an expression.",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./lib/esm/types/index.d.ts",
+                "default": "./lib/esm/index.mjs"
+            },
+            "require": {
+                "types": "./lib/cjs/types/index.d.ts",
+                "default": "./lib/cjs/index.js"
+            }
+        }
+    },
+    "types": "./lib/cjs/types/index.d.ts",
+    "main": "./lib/cjs/index.js",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "clean": "shx rm -rf ./lib",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p ./configs/tsconfig.esm.json && shx mv lib/esm/index.js lib/esm/index.mjs",
+        "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+        "prepack": "npm run build",
+        "lint": "eslint --debug src/",
+        "lint:write": "eslint --debug src/ --fix",
+        "prettier": "prettier --write src/**/*.ts"
+    },
+    "release": {
+        "branches": [
+            "main"
+        ]
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bxr1nG/boolean-evaluator.git"
+    },
+    "keywords": [],
+    "author": "Danya Voshchuk <vochshukdaniil@gmail.com> (https://github.com/bxr1nG)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bxr1nG/boolean-evaluator/issues"
+    },
+    "homepage": "https://github.com/bxr1nG/boolean-evaluator#readme",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0",
+        "eslint": "^8.34.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.8.4",
+        "shx": "^0.3.4",
+        "typescript": "^4.9.5"
     }
-  },
-  "types": "./lib/cjs/types/index.d.ts",
-  "main": "./lib/cjs/index.js",
-  "files": [
-    "lib/**/*"
-  ],
-  "scripts": {
-    "clean": "shx rm -rf ./lib",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p ./configs/tsconfig.esm.json && shx mv lib/esm/index.js lib/esm/index.mjs",
-    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
-    "prepack": "npm run build"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bxr1nG/boolean-evaluator.git"
-  },
-  "keywords": [],
-  "author": "Danya Voshchuk <vochshukdaniil@gmail.com> (https://github.com/bxr1nG)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bxr1nG/boolean-evaluator/issues"
-  },
-  "homepage": "https://github.com/bxr1nG/boolean-evaluator#readme",
-  "devDependencies": {
-    "shx": "^0.3.4",
-    "typescript": "^4.9.5"
-  }
 }
