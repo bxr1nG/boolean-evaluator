@@ -18,11 +18,18 @@ module.exports = {
                 "plugin:@typescript-eslint/recommended-requiring-type-checking"
             ],
             parserOptions: {
-                project: ["./configs/tsconfig.base.json"],
+                project: ["./configs/tsconfig.eslint.json"],
                 tsconfigRootDir: __dirname
             }
         }
     ],
+    settings: {
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
