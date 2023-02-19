@@ -1,6 +1,6 @@
 {
     "name": "@bxr1ng-os/boolean-evaluator",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Package for transforming a string with logical operators into the result of an expression.",
     "exports": {
         ".": {
