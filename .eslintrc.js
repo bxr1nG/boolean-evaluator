@@ -35,9 +35,14 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module"
     },
-    plugins: ["@typescript-eslint", "import", "prettier"],
+    plugins: ["@typescript-eslint", "import", "prettier", "jest"],
     rules: {
         "prettier/prettier": "error",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/consistent-type-imports": "error",
         "import/order": [
