@@ -11,7 +11,7 @@ $ npm install @bxr1ng-os/boolean-evaluator
 ## Usage
 
 ```typescript
-import Evaluate from "../src/index";
+import Evaluate from "@bxr1ng-os/boolean-evaluator";
 
 const string = "!(true || false) && true";
 
