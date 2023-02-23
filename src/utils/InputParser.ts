@@ -9,7 +9,7 @@ function InputParser(input: string, operands: Array<string>): Array<string> {
     while (input.length > 0) {
         const newEntry = entries.filter((entry) => input.startsWith(entry));
 
-        if (newEntry.length !== 1) {
+        if (newEntry.length < 1) {
             throw new Error("Syntax error in the input string");
         }
 
@@ -25,12 +25,90 @@ function InputParser(input: string, operands: Array<string>): Array<string> {
         }
         if (entry === ")") {
             bracketsCounter--;
+            if (bracketsCounter < 0) {
+                throw new Error(
+                    "Unexpected order of brackets in the input string"
+                );
+            }
         }
     });
 
     if (bracketsCounter !== 0) {
         throw new Error("Incorrect number of brackets in the input string");
     }
+
+    // ...!
+    if (
+        inputEntries.length > 0 &&
+        ["&&", "||", "!"].includes(inputEntries.at(-1) as string)
+    ) {
+        throw new Error("Unexpected operator in the input string");
+    }
+    // &&...
+    if (
+        inputEntries.length > 0 &&
+        ["&&", "||"].includes(inputEntries.at(0) as string)
+    ) {
+        throw new Error("Unexpected operator in the input string");
+    }
+
+    inputEntries.forEach((entry, index) => {
+        // true false
+        if (
+            operands.includes(entry) &&
+            index + 1 < inputEntries.length &&
+            operands.includes(inputEntries[index + 1] as string)
+        ) {
+            throw new Error("Unexpected operand in the input string");
+        }
+        // ()
+        if (
+            entry === "(" &&
+            index + 1 < inputEntries.length &&
+            inputEntries[index + 1] === ")"
+        ) {
+            throw new Error("Unexpected order of brackets in the input string");
+        }
+        // true (...
+        if (
+            entry === "(" &&
+            index - 1 >= 0 &&
+            [...operands, "&&", "||"].includes(
+                inputEntries[index - 1] as string
+            )
+        ) {
+            throw new Error("Unexpected operand in the input string");
+        }
+        // ...) true
+        if (
+            entry === ")" &&
+            index + 1 < inputEntries.length &&
+            [...operands, "&&", "||", "!"].includes(
+                inputEntries[index + 1] as string
+            )
+        ) {
+            throw new Error("Unexpected operand in the input string");
+        }
+
+        const andor = ["&&", "||"];
+
+        // ! &&
+        if (
+            entry === "!" &&
+            index + 1 < inputEntries.length &&
+            andor.includes(inputEntries[index + 1] as string)
+        ) {
+            throw new Error("Unexpected operator in the input string");
+        }
+        // && ||
+        if (
+            andor.includes(entry) &&
+            index + 1 < inputEntries.length &&
+            andor.includes(inputEntries[index + 1] as string)
+        ) {
+            throw new Error("Unexpected operator in the input string");
+        }
+    });
 
     return inputEntries;
 }
