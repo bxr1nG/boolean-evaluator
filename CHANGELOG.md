@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/bxr1nG/boolean-evaluator/compare/v0.0.1...v0.0.2) (2023-02-23)
+
+
+### Features
+
+* add implementation ([62a4110](https://github.com/bxr1nG/boolean-evaluator/commit/62a41103273e8f6365c20f7e36e9f0a4175c5179))
+
+
+### Bug Fixes
+
+* add dummy tsconfig file in the root directory to enable problem highlighting ([630f9b6](https://github.com/bxr1nG/boolean-evaluator/commit/630f9b62dff773f24345824406c45c22c99d61e4))
+* **classes:** remove type field ([309503c](https://github.com/bxr1nG/boolean-evaluator/commit/309503c1434c1b6610911babe9fba7ebb59ad94f))
+* **inputparser:** add more error checks ([826a798](https://github.com/bxr1nG/boolean-evaluator/commit/826a798c7e97558d461b4cc539d3a7ea1af8fb93))
+* **inputparser:** fix check error ([f677f5e](https://github.com/bxr1nG/boolean-evaluator/commit/f677f5ec8dd89b267988a436363abe0c86b0936a))
+* **postfixconverter:** fix multiple NOT problem ([cd65ec2](https://github.com/bxr1nG/boolean-evaluator/commit/cd65ec244468988aeb4db96d866d91d17a2722c6))
+* remove TreeResolver, add evaluate method to classes instead ([f817ffc](https://github.com/bxr1nG/boolean-evaluator/commit/f817ffcf9abbcfef972da37183a99874e618f551))
+
+
+### Others
+
+* **.eslintrc.js:** add jest plugin for ESLint ([d68a819](https://github.com/bxr1nG/boolean-evaluator/commit/d68a8192a604882757976977223199e92568f90d))
+* **.husky:** fix husky hooks ([2425ef8](https://github.com/bxr1nG/boolean-evaluator/commit/2425ef822e220960cbc241dfd118fd4787c6b515))
+* **readme.md:** fix import from in usage example ([7ae3917](https://github.com/bxr1nG/boolean-evaluator/commit/7ae3917b1db3d3a2b81b25f40091b551f5480163))
+* **tsconfig.eslint.json:** add type checking ([efaa8cc](https://github.com/bxr1nG/boolean-evaluator/commit/efaa8cc7056000f2d11dda9ce1966a3aa099578e))
+
+
+### Tests
+
+* add tests ([2d1046e](https://github.com/bxr1nG/boolean-evaluator/commit/2d1046e3b0e813001c96c793f3ff56cf7bee7309))
+* **tests/classes:** add tests for classes ([fedc866](https://github.com/bxr1nG/boolean-evaluator/commit/fedc86672758f100dabb06f08705ad8874d256f7))
+
 ### 0.0.1 (2023-02-19)
 
 
