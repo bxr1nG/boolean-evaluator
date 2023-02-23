@@ -19,10 +19,13 @@ function PostfixConverter(
             while (
                 stack.length > 0 &&
                 stack[stack.length - 1] !== "(" &&
-                precedence[token as keyof typeof precedence] <=
-                    precedence[
+                (precedence[
+                    stack[stack.length - 1] as keyof typeof precedence
+                ] > precedence[token as keyof typeof precedence] ||
+                    (precedence[
                         stack[stack.length - 1] as keyof typeof precedence
-                    ]
+                    ] === precedence[token as keyof typeof precedence] &&
+                        token !== "!"))
             ) {
                 output.push(stack.pop() as string);
             }
