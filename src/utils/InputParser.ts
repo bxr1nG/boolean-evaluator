@@ -83,9 +83,7 @@ function InputParser(input: string, operands: Array<string>): Array<string> {
         if (
             entry === ")" &&
             index + 1 < inputEntries.length &&
-            [...operands, "&&", "||", "!"].includes(
-                inputEntries[index + 1] as string
-            )
+            [...operands, "!"].includes(inputEntries[index + 1] as string)
         ) {
             throw new Error("Unexpected operand in the input string");
         }
