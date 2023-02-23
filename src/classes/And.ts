@@ -10,6 +10,10 @@ class And {
         this.operand1 = operand1;
         this.operand2 = operand2;
     }
+
+    evaluate(): boolean {
+        return this.operand1.evaluate() && this.operand2.evaluate();
+    }
 }
 
 export default And;

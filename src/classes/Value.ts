@@ -1,10 +1,14 @@
 class Value {
     type: string;
-    value: string;
+    value: boolean;
 
-    constructor(value: string) {
+    constructor(value: boolean) {
         this.type = "value";
         this.value = value;
+    }
+
+    evaluate(): boolean {
+        return this.value;
     }
 }
 

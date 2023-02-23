@@ -1,7 +1,6 @@
 import InputParser from "./utils/InputParser";
 import PostfixConverter from "./utils/PostfixConverter";
 import TreeCreator from "./utils/TreeCreator";
-import TreeResolver from "./utils/TreeResolver";
 
 function Evaluate(string: string): boolean {
     const values = { true: true, false: false };
@@ -9,10 +8,9 @@ function Evaluate(string: string): boolean {
 
     const tokens = InputParser(string, operands);
     const postfix = PostfixConverter(tokens, operands);
-    const tree = TreeCreator(postfix, operands);
-    const result = TreeResolver(tree, values);
+    const tree = TreeCreator(postfix, operands, values);
 
-    return result;
+    return tree.evaluate();
 }
 
 export default Evaluate;

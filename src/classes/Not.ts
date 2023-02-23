@@ -8,6 +8,10 @@ class Not {
         this.type = "not";
         this.operand = operand;
     }
+
+    evaluate(): boolean {
+        return !this.operand.evaluate();
+    }
 }
 
 export default Not;

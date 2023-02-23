@@ -5,12 +5,16 @@ import And from "../classes/And";
 import Or from "../classes/Or";
 import Not from "../classes/Not";
 
-function TreeCreator(postfix: Array<string>, operands: Array<string>): Operand {
+function TreeCreator(
+    postfix: Array<string>,
+    operands: Array<string>,
+    values: Record<string, boolean>
+): Operand {
     const stack: Array<Operand> = [];
 
     postfix.forEach((token) => {
         if (operands.includes(token)) {
-            stack.push(new Value(token));
+            stack.push(new Value(values[token]));
         }
         if (token === "&&") {
             const operand = new And(

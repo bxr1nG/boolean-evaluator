@@ -37,7 +37,6 @@ function PostfixConverter(
             }
             stack.pop();
         }
-        throw new Error(`Invalid input token ${token}`);
     });
 
     while (stack.length > 0) {
