@@ -14,7 +14,7 @@ function TreeCreator(
 
     postfix.forEach((token) => {
         if (operands.includes(token)) {
-            stack.push(new Value(values[token]));
+            stack.push(new Value(values[token] as boolean));
         }
         if (token === "&&") {
             const operand = new And(
@@ -40,7 +40,7 @@ function TreeCreator(
         throw new Error("Incorrect number of operands in the input string");
     }
 
-    return stack[0];
+    return stack[0] as Operand;
 }
 
 export default TreeCreator;

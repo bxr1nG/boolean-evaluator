@@ -4,7 +4,7 @@ function InputParser(input: string, operands: Array<string>): Array<string> {
 
     input = input.replace(/\s/g, "");
 
-    const inputEntries = [];
+    const inputEntries: Array<string> = [];
 
     while (input.length > 0) {
         const newEntry = entries.filter((entry) => input.startsWith(entry));
@@ -13,8 +13,8 @@ function InputParser(input: string, operands: Array<string>): Array<string> {
             throw new Error("Syntax error in the input string");
         }
 
-        inputEntries.push(newEntry[0]);
-        input = input.replace(newEntry[0], "");
+        inputEntries.push(newEntry[0] as string);
+        input = input.replace(newEntry[0] as string, "");
     }
 
     let bracketsCounter = 0;
