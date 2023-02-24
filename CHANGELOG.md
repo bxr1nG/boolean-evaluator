@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/bxr1nG/boolean-evaluator/compare/v0.0.2...v0.0.3) (2023-02-24)
+
+
+### CI
+
+* create test.yml workflow ([bae8128](https://github.com/bxr1nG/boolean-evaluator/commit/bae8128a32f90d2709cd3941d90f34411e8db5c6))
+* fix test.yml workflow ([8daf8f5](https://github.com/bxr1nG/boolean-evaluator/commit/8daf8f50e3ca304b64bd5fd6cfb9f3abbe603ab4))
+
+
+### Others
+
+* **readme.md:** add badges ([01428b6](https://github.com/bxr1nG/boolean-evaluator/commit/01428b631d71ec97672655ae318512794948486e))
+* **readme.md:** add coverage badge ([45c544a](https://github.com/bxr1nG/boolean-evaluator/commit/45c544a52460c31c02422977366314acf0601789))
+
 ### [0.0.2](https://github.com/bxr1nG/boolean-evaluator/compare/v0.0.1...v0.0.2) (2023-02-23)
 
 
