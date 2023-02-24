@@ -4,6 +4,7 @@
 ![NPM Downloads](https://img.shields.io/npm/dw/@bxr1ng-os/boolean-evaluator?style=flat-square)
 ![NPM License](https://img.shields.io/npm/l/@bxr1ng-os/boolean-evaluator?style=flat-square)
 ![npm](https://img.shields.io/npm/v/@bxr1ng-os/boolean-evaluator?style=flat-square)
+[![Codecov](https://img.shields.io/codecov/c/github/bxr1nG/boolean-evaluator?style=flat-square)](https://app.codecov.io/gh/bxr1nG/boolean-evaluator)
 
 Package for transforming a string with logical operators into the result of an expression.
 
