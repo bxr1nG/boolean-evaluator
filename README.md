@@ -26,9 +26,24 @@ const result = Evaluate(string);
 console.log(result); // false
 ```
 
+You can also pass your variables to the function. Simply write your variables in a string, and pass in the second parameter an object with the values.
+
+```typescript
+import Evaluate from "@bxr1ng-os/boolean-evaluator";
+
+const newValues = { "some-true-value": true, "some-false-value": false};
+const string = "some-true-value || some-false-value";
+
+const result = Evaluate(string, newValues);
+
+console.log(result); // true
+```
+
 ## Available operators and values
 
-`true`, `false`, `&&`, `||`, `!`, `(`, `)`
+`&&`, `||`, `!`, `(`, `)`, `true`, `false`
+
+> **NOTE:** Default values cannot be reassigned!
 
 ## License
 
