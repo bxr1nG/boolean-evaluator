@@ -15,24 +15,23 @@ function TreeCreator(
     postfix.forEach((token) => {
         if (operands.includes(token)) {
             stack.push(new Value(values[token] as boolean));
-        }
-        if (token === "&&") {
+        } else if (token === "&&") {
             const operand = new And(
                 stack.pop() as Operand,
                 stack.pop() as Operand
             );
             stack.push(operand);
-        }
-        if (token === "||") {
+        } else if (token === "||") {
             const operand = new Or(
                 stack.pop() as Operand,
                 stack.pop() as Operand
             );
             stack.push(operand);
-        }
-        if (token === "!") {
+        } else if (token === "!") {
             const operand = new Not(stack.pop() as Operand);
             stack.push(operand);
+        } else {
+            throw new Error("Unexpected operand in the input string");
         }
     });
 
