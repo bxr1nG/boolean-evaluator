@@ -37,6 +37,34 @@ describe("TreeCreator function", () => {
         );
     });
 
+    test('should return tree from ["some-true-value", "some-false-value", "||"]', () => {
+        const tree = new Or(new Value(false), new Value(true));
+        const customValues = {
+            ...values,
+            "some-true-value": true,
+            "some-false-value": false
+        };
+        const customOperands = Object.keys(customValues).sort(
+            (a, b) => b.length - a.length
+        );
+
+        expect(
+            TreeCreator(
+                ["some-true-value", "some-false-value", "||"],
+                customOperands,
+                customValues
+            )
+        ).toEqual(tree);
+    });
+
+    test('should throw from ["true", "some-defunct-value", "||"]', () => {
+        const func = () => {
+            TreeCreator(["true", "some-defunct-value", "||"], operands, values);
+        };
+
+        expect(func).toThrow(Error);
+    });
+
     test('should throw from ["true", "true", "false", "||"]', () => {
         const func = () => {
             TreeCreator(["true", "true", "false", "||"], operands, values);

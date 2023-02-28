@@ -37,6 +37,28 @@ describe("InputParser function", () => {
         expect(InputParser("!true", operands)).toEqual(["!", "true"]);
     });
 
+    test('should return ["some-value-1", "||", "some-value-2"]', () => {
+        const customOperands = ["some-value-1", "some-value-2"];
+
+        expect(
+            InputParser("some-value-1||some-value-2", customOperands)
+        ).toEqual(["some-value-1", "||", "some-value-2"]);
+    });
+
+    test('should return ["trueee", "||", "true", "||", "trueee"]', () => {
+        const customOperands = ["trueee", ...operands].sort(
+            (a, b) => b.length - a.length
+        );
+
+        expect(InputParser("trueee||true||trueee", customOperands)).toEqual([
+            "trueee",
+            "||",
+            "true",
+            "||",
+            "trueee"
+        ]);
+    });
+
     test('should throw on "abc"', () => {
         const func = () => {
             InputParser("abc", operands);
