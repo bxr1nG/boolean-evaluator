@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/bxr1nG/boolean-evaluator/compare/v0.0.3...v0.1.0) (2023-02-28)
+
+
+### Features
+
+* add newValues variable ([a015c1a](https://github.com/bxr1nG/boolean-evaluator/commit/a015c1acde92dacd973302b22a77cb64ccb12716))
+
+
+### Tests
+
+* add tests for newValues variable ([daf0ab6](https://github.com/bxr1nG/boolean-evaluator/commit/daf0ab6d8107333aaa12654e23229bb4ce8828fd))
+
+
+### Others
+
+* **readme.md:** correct usage examples according to the changes ([c2c81d5](https://github.com/bxr1nG/boolean-evaluator/commit/c2c81d518b67c75159614f3fc35690795bcb625c))
+
 ### [0.0.3](https://github.com/bxr1nG/boolean-evaluator/compare/v0.0.2...v0.0.3) (2023-02-24)
 
 
