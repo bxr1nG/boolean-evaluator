@@ -40,14 +40,16 @@ function InputParser(input: string, operands: Array<string>): Array<string> {
     // ...!
     if (
         inputEntries.length > 0 &&
-        ["&&", "||", "!"].includes(inputEntries.at(-1) as string)
+        ["&&", "||", "!"].includes(
+            inputEntries[inputEntries.length - 1] as string
+        )
     ) {
         throw new Error("Unexpected operator in the input string");
     }
     // &&...
     if (
         inputEntries.length > 0 &&
-        ["&&", "||"].includes(inputEntries.at(0) as string)
+        ["&&", "||"].includes(inputEntries[0] as string)
     ) {
         throw new Error("Unexpected operator in the input string");
     }
