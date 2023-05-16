@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/bxr1nG/boolean-evaluator/compare/v0.1.0...v0.1.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* **inputparser.ts:** replace at method of arrays ([acb7008](https://github.com/bxr1nG/boolean-evaluator/commit/acb7008d34c8d5001df174a378ccf6abf9ae1beb))
+
+
+### Build System
+
+* **package-lock.json:** update dependencies ([2fb9766](https://github.com/bxr1nG/boolean-evaluator/commit/2fb976628713dd405cf88c35d9f99745ee7fea46))
+
 ## [0.1.0](https://github.com/bxr1nG/boolean-evaluator/compare/v0.0.3...v0.1.0) (2023-02-28)
 
 
